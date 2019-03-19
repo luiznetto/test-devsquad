@@ -19,13 +19,14 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('image');
             $table->double('price', 8, 2);
-            $table->integer('category_id');
+            $table->unsignedBigInteger('category_id');
 
             $table->timestamps();
 
             $table
                 ->foreign('category_id')
-                ->references('id')->on('categories');
+                ->references('id')
+                ->on('categories');
         });
     }
 
