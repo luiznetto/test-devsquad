@@ -11,8 +11,8 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::orderBy('created_at' , 'desc')->get();
-
+        $products = Product::with('category')->orderBy('created_at' , 'desc')->get();
+       
         return view('products.home' , ['products' => $products]);
     }
 

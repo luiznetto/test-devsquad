@@ -6,7 +6,7 @@
         @include('layouts._includes._nav')
         <div class="col-9">
             <h3>Create Product</h3>
-            <form method="POST" action="{{ route('products.store') }}">
+            <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -20,10 +20,16 @@
                     <label for="price">Price</label>
                     <input type="text" class="form-control" id="price" placeholder="Price">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="image">Images</label>
                     <input type="text" class="form-control" id="image" placeholder="Images">
-                </div>
+                </div> -->
+
+                <div class="form-group" >
+                    <input class="file btn btn-lg btn-primary" id="image" type="file" name="image"/>                     
+                </div>               
+
+
                 <div class="form-group">
                     <label for="description">Description</label>
                     <textarea class="form-control" id="description" placeholder="Description" required></textarea>

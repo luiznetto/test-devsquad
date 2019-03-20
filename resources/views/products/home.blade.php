@@ -15,6 +15,7 @@
             <div class="row flex-row justify-content-between">
                 <div class="flex-row">
                     <a class="btn btn-primary mr-2" href="{{route('products.create')}}">ADD PRODUCT</a>
+                    <a class="btn btn-primary mr-2" href="{{route('products.create')}}">ADD CATEGORY</a>
                     <a class="btn btn-primary mr-2" href="{{route('products.create')}}">IMPORT PRODUCT</a>
                 </div>
                 <form class="form-inline">
