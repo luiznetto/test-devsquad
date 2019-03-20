@@ -12,10 +12,15 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Name">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="category">Category</label>
                     <input type="text" class="form-control" id="category" placeholder="Category">
-                </div>
+                </div> -->
+                <select name="atributos[]" multiple="multiple" class="form-control">
+                    @foreach($attributes as $value)
+                        <option {{$property->atributo == $value->id ? 'selected' : '' }}  value="{{ $value->id }}">{{$value->nome}}</option>
+                    @endforeach
+                </select>
                 <div class="form-group">
                     <label for="price">Price</label>
                     <input type="text" class="form-control" id="price" placeholder="Price">
