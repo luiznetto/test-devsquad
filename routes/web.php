@@ -16,6 +16,5 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::resource('/products', 'ProductsController')->middleware('auth');
-
-// Route::resource('/category', 'CategoriesController')->middleware('auth');
+Route::resource('/products', 'ProductController')->middleware('auth');
+Route::resource('/categories', 'CategoryController')->middleware('auth')->except(['show']);

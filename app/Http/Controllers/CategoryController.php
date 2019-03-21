@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest;
 
-class CategoriesController extends Controller
+class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::orderBy('created_at' , 'desc')->get();
+        $categories = Category::all();
 
-        return view('products.home' , ['categories' => $categories]);
+        return view('categories.home' , ['categories' => $categories]);
     }
 
     public function create()
@@ -18,7 +20,7 @@ class CategoriesController extends Controller
        return view('categories.create');
     }
 
-    public function store(CategoriesRequest $request)
+    public function store(CategoryRequest $request)
     {
         $category = new Category();
         $category->name = $request->name;
@@ -31,21 +33,21 @@ class CategoriesController extends Controller
     {
        $category = Category::findOrFail($id);
 
-       return view('categories.edit', ['category' => $category]);
+       return view('categories.create', ['category' => $category]);
     }
 
-    public function update(CategoriesRequest $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-       $category = Categorys::findOrFail($id);
+       $category = Category::findOrFail($id);
        $category->name = $request->name;
        $category->save();
        
        return redirect()->route('categories.index')->with('message', 'Category updated successfully!');
     }   
 
-    public function desdroy($id)
+    public function destroy($id)
     {
-        $category = categorys::findOrFail($id);
+        $category = Category::findOrFail($id);
         $category->delete();
 
         return redirect()->route('categories.index')->with('message' , 'Category has been deleted');

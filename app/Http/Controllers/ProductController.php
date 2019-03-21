@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class ProductController extends Controller
 {
 
     public function index()
     {
-        $products = Product::with('category')->orderBy('created_at' , 'desc')->get();
+        $products = Product::with('category')->get();
        
         return view('products.home' , ['products' => $products]);
     }
 
     public function create()
     {
-       return view('products.create');
+        $categories = Category::all();
+
+        return view('products.create', ['categories' => $categories]);
     }
 
     public function store(ProductRequest $request)
@@ -26,7 +29,7 @@ class ProductsController extends Controller
         $product = new Product();
         $product->name = $request->name;
         $product->description = $request->description;
-        $product->image = $request->image;
+        $product->image = $request->file('image');
         $product->price = $request->price;
         $product->category_id = $request->category_id;
         $product->save();
@@ -37,8 +40,9 @@ class ProductsController extends Controller
     public function edit($id)
     {
        $product = Product::findOrFail($id);
+       $categories = Category::all();
 
-       return view('products.edit', ['product' => $product]);
+       return view('products.create', ['product' => $product, 'categories' => $categories]);
     }
 
     public function update(ProductRequest $request, $id)
@@ -46,7 +50,7 @@ class ProductsController extends Controller
        $product = Product::findOrFail($id);
        $product->name = $request->name;
        $product->description = $request->description;
-       $product->image = $request->image;
+       $product->image = $request->file('image');
        $product->price = $request->price;
        $product->category_id = $request->category_id;
        $product->save();
