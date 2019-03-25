@@ -20,4 +20,4 @@ Route::resource('/products', 'ProductController')->middleware('auth');
 Route::resource('/categories', 'CategoryController')->middleware('auth')->except(['show']);
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/lists', 'PagesController@lists')->name('lists');
-Route::get('/shirts/{product}', 'PagesController@shirt')->name('shirt');
+Route::get('/lists/page_product/{id}', 'PagesController@page_product')->name('page_product');

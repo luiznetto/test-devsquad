@@ -18,6 +18,23 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+                    $('.count').prop('disabled', true);
+                    $(document).on('click','.plus',function(){
+                        $('.count').val(parseInt($('.count').val()) + 1 );
+                    });
+                    $(document).on('click','.minus',function(){
+                        $('.count').val(parseInt($('.count').val()) - 1 );
+                            if ($('.count').val() == 0) {
+                                $('.count').val(1);
+                            }
+                        });
+                });
+    </script>
+    
 </head>
 <body>
     <div id="app">
@@ -36,13 +53,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('products.index') }}">{{ __('for man') }}</a>
+                            <a class="nav-link" href="{{ route('lists') }}">{{ __('for man') }}</a>
                         </li>                        
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('products.index') }}">{{ __('for woman') }}</a>
+                            <a class="nav-link" href="{{ route('lists') }}">{{ __('for woman') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('products.index') }}">{{ __('others') }}</a>
+                            <a class="nav-link" href="#">{{ __('others') }}</a>
                         </li>
 
                     </ul>

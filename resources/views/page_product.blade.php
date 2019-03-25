@@ -1,34 +1,43 @@
 @extends('layouts.app')
+@section("bla")
+    <div class="row-top">
+        <p>free shipping</p>    
+    </div>
+@endsection
 
 @section('content')
-<div class="container-fulid">
+    <div class="container">
         <div class="row">
-            <div class="first-row">
-                <h1>featured</h1>
-                    <p>for woman</p>                        
-            </div>
-        </div>
-    </div> 
-    <div class="container container-products">   
-        <div class="row row-products">          
-                @foreach($shirts->slice(0, 3)  as $product)
-                <div class="small-3 medium-3 large-3 columns">         
-                    <img class="" id="preview"  src="{{isset($product) ? URL::asset('/images/'.$product->image) : '' }}"
-                         height="340" width="370">
-                         <div class="row row-informations">
-                            <p class="col-6">{{$product->name}}</p>
-                            <p class="col-6">{{'R$ '.number_format($product->price, 2, ',', '.')}}</p>                          
-                         </div>
-                            <p><button>Add to Cart</button></p> 
+            <div class="col-6">
+                <div class="product-image">
+                    <img src="{{ asset('images/clock_1.png') }}" alt="" height="340" width="370">
                 </div>
-                @endforeach             
-        </div>
+            </div> 
+            <div class="col-6">
+                <div class="product-data">
+                    <h3>Gold + Black</h3>
+                    <h2>$119,00</h2>
+                    <p>QUANTITY</p>
+                    <div class="qty">
+                        <span class="minus">-</span>
+                        <input type="number" class="count" name="qty" value="01">
+                        <span class="plus">+</span>
+                    </div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        A illo est assumenda autem fugit? 
+                        Odit, in vel itaque vero quidem ipsa non tenetur magni corrupti vitae ea maiores ad repudiandae?
+                    </p>
+                </div>
+                    <p>
+                        <button class="product">Add to Cart</button>
+                    </p>                
+            </div>
+        </div>        
     </div>
-       
 @endsection
     
 @section('footer')
-    <div class="container">
+    <div class="container-fluid container-footer">
         <div class="row">
             <div class="newsletter-row">
                 <h1>want 80% off?</h1>
@@ -41,7 +50,7 @@
         </div> 
     </div>
         <footer class="footer"> 
-            <div class="container-fluid">  
+            <div class="container-fluid ">  
                 <div class="container"> 
                     <div class="row text-footer">
                         <div class="col-3">

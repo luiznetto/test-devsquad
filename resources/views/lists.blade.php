@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section("bla")
     <div class="row-top">
         <p>free shipping</p>    
@@ -7,47 +6,16 @@
 @endsection
 
 @section('content')
-    <div class="header">
-        <img src="{{ asset('images/banner.png') }}" />  
-    </div>  
-    <div class="container-fluid"> 
+<div class="container-fulid">
         <div class="row">
             <div class="first-row">
-                <h1>featured</h1>
-                    <p>for man</p>                         
-            </div>
-        </div>   
-    </div>   
-    <div class="container container-products">  
-    
-        <div class="row row-products">           
-                @foreach($products->slice(0, 3)  as $product)
-                    <a href="{{ route('page_product' , $product ) }}">
-                        <div class="small-3 medium-3 large-3 columns">         
-                            <img class="" id="preview"  src="{{isset($product) ? URL::asset('/images/'.$product->image) : '' }}"
-                                height="340" width="370">
-                                <div class="row row-informations">
-                                    <p class="col-6">{{$product->name}}</p>
-                                <p class="col-6">{{'R$ '.number_format($product->price, 2, ',', '.')}}</p>                          
-                            </div>
-                                <p><button>Add to Cart</button></p>                           
-                        </div>               
-                    </a> 
-                @endforeach 
-                  
-        </div>        
-    </div>  
-    <div class="container-fulid">
-        <div class="row">
-            <div class="first-row">
-                <h1>featured</h1>
-                    <p>for woman</p>                        
+                <h1>for man</h1>                                      
             </div>
         </div>
     </div> 
     <div class="container container-products">   
         <div class="row row-products">          
-                @foreach($products->slice(0, 3)  as $product)
+                @foreach($lists->slice(0, 9)  as $product)
                 <div class="small-3 medium-3 large-3 columns">         
                     <img class="" id="preview"  src="{{isset($product) ? URL::asset('/images/'.$product->image) : '' }}"
                          height="340" width="370">
@@ -77,7 +45,7 @@
         </div> 
     </div>
         <footer class="footer"> 
-            <div class="container-fluid">  
+            <div class="container-fluid ">  
                 <div class="container"> 
                     <div class="row text-footer">
                         <div class="col-3">
@@ -116,6 +84,3 @@
         </footer>    
        
 @endsection
-    
-    
-

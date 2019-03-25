@@ -10,9 +10,9 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $shirts=Product::all();
+        $products=Product::all();
         
-        return view('index' , ['shirts' => $shirts]);
+        return view('index' , ['products' => $products]);
     }
 
     public function lists()
@@ -21,9 +21,8 @@ class PagesController extends Controller
         return view('lists' , ['lists' => $lists]);
     }
 
-    public function shirt(Product $product)
-    {
-
-        return view('shirt',compact('product'));
+    public function page_product(Product $product)
+    {   
+        return view('page_product' ,['product' => $product]);
     }
 }

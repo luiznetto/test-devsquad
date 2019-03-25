@@ -1,4 +1,4 @@
-<aside class="col-3">
+<aside class="col-3 ">
     <h3 class='text-uppercase'>Menu</h3>
     <nav>
         <ul class="nav flex-column">            

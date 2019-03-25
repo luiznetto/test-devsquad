@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+.container-admin
+<div class="container container-admin">
     <div class="row">
         @include('layouts._includes._nav')
         <div class="col-9">

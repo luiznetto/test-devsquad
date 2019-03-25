@@ -10655,6 +10655,15 @@ a.text-dark:focus {
   }
 }
 
+main {
+  background-color: #fff;
+}
+
+.container-admin {
+  margin-bottom: 5%;
+  background-color: #fff;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -10699,12 +10708,17 @@ a.text-dark:focus {
   background-color: #000;
 }
 
+.row-top p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .first-row {
   color: #fff;
   width: 100%;
   text-transform: uppercase;
   text-align: center;
-  background-image: -webkit-linear-gradient(70deg, #fff 50%, #000 50%);
+  background-image: -webkit-linear-gradient(75deg, #fff 50%, #000 50%);
   min-height: 500px;
 }
 
@@ -10724,8 +10738,9 @@ a.text-dark:focus {
 }
 
 .newsletter-row {
-  margin-top: 10%;
   width: 100%;
+  margin-top: 5%;
+  margin-bottom: 2%;
   text-transform: uppercase;
   text-align: center;
 }
@@ -10753,7 +10768,8 @@ a.text-dark:focus {
 }
 
 .row-informations {
-  font-size: 30px;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .row-informations .price {
@@ -10838,5 +10854,132 @@ a.text-dark:focus {
 
 .footer .row-end-footer {
   margin-top: 5%;
+}
+
+.container-footer {
+  background-color: #f8f8f8;
+}
+
+.container-products {
+  margin-bottom: 2%;
+  background-color: #fff;
+}
+
+.product-data {
+  text-align: left;
+}
+
+.product-data h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+  line-height: 1.8;
+  font-size: 45px;
+}
+
+.product-data h3 {
+  font-weight: 600;
+  font-size: 28;
+}
+
+.product-data p {
+  font-weight: 600;
+}
+
+.product-data .qty {
+  margin-bottom: 5%;
+}
+
+.qty .count {
+  color: #000;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 0 2px;
+  min-width: 35px;
+  text-align: center;
+}
+
+.qty .plus {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #f0f0f0;
+  color: #000;
+  width: 25px;
+  height: 25px;
+  font: 25px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.qty .minus {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #f0f0f0;
+  color: #000;
+  width: 25px;
+  height: 25px;
+  font: 25px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+
+div {
+  text-align: left;
+}
+
+.minus:hover {
+  background-color: #4b494980 !important;
+}
+
+.plus:hover {
+  background-color: #4b494980 !important;
+}
+
+/*Prevent text selection*/
+
+span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input {
+  border: 0;
+  width: 2%;
+}
+
+nput::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:disabled {
+  background-color: white;
+}
+
+.product {
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: none;
+  outline: 0;
+  padding: 5px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 30%;
+  font-size: 15px;
+  height: 40px;
+}
+
+button:hover {
+  opacity: 0.7;
 }
 
