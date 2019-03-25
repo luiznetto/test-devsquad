@@ -47,7 +47,12 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $category = Category::findOrFail($id);
+        $category = Category::with('products')->findOrFail($id);
+
+        if (count($category->products) > 0) {
+            return redirect()->route('categories.index')->with('error' , 'This item is already in use.');
+        }
+
         $category->delete();
 
         return redirect()->route('categories.index')->with('message' , 'Category has been deleted');

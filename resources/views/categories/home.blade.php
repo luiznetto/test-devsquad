@@ -12,6 +12,13 @@
                     </div>
                 </div>
             @endif
+            @if (session('error'))
+                <div class="row">
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                </div>
+            @endif
             <div class="row flex-row justify-content-between">
                 <div class="flex-row">
                     <a class="btn btn-primary mr-2" href="{{route('categories.create')}}">ADD CATEGORY</a>
@@ -31,17 +38,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($categories as $category)
+                    @foreach($categories as $category)
                             <tr>
                                 <th scope="row">{{ $category->id }}</th>
                                 <td>{{ $category->name }}</td>
                                 <td class="form-inline">
                                     <a class="btn btn-primary mr-2" href="{{ route('categories.edit', $category->id) }}">Edit</a>
-                                    <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
-                                        {{ method_field('delete') }}
-                                        {{ csrf_field() }}
-                                        <button class="btn btn-danger" type="submit">Delete</button>
-                                    </form>
+                                    <a href="javascript(false);" class="btn btn-danger" data-toggle="modal" data-target="{{ '#modal-delete-' . $category->id }}">Delete</a>            
+                                    @include('layouts._includes._modal-delete', ['elementId' => $category->id, 'route'=> 'categories.destroy'])      
                                 </td>
                             </tr>
                         @endforeach

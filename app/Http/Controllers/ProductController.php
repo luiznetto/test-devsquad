@@ -26,12 +26,21 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
+        
+
         $product = new Product();
         $product->name = $request->name;
-        $product->description = $request->description;
-        $product->image = $request->file('image');
+        $product->description = $request->description;        
         $product->price = $request->price;
         $product->category_id = $request->category_id;
+
+        if ($request->hasFile('image')) {
+            $name = time().'.'.$request->file('image')->getClientOriginalExtension();
+            $destinationPath = public_path('/images');
+            $request->file('image')->move($destinationPath, $name);            
+            $product->image = $name;
+           
+        }
         $product->save();
 
         return redirect()->route('products.index')->with('message', 'Product created successfully!');
@@ -39,26 +48,32 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-       $product = Product::findOrFail($id);
-       $categories = Category::all();
+        $product = Product::findOrFail($id);
+        $categories = Category::all();
 
-       return view('products.create', ['product' => $product, 'categories' => $categories]);
+        return view('products.create', ['product' => $product, 'categories' => $categories]);
     }
 
     public function update(ProductRequest $request, $id)
     {
-       $product = Product::findOrFail($id);
-       $product->name = $request->name;
-       $product->description = $request->description;
-       $product->image = $request->file('image');
-       $product->price = $request->price;
-       $product->category_id = $request->category_id;
-       $product->save();
-       
-       return redirect()->route('products.index')->with('message', 'Product updated successfully!');
+        $product = Product::findOrFail($id);
+        $product->name = $request->name;
+        $product->description = $request->description;       
+        $product->price = $request->price;
+        $product->category_id = $request->category_id;
+
+        if ($request->hasFile('image')) {
+            $name = time() . '.' . $request->file('image')->getClientOriginalExtension();
+            $destinationPath = public_path('/images');
+            $request->file('image')->move($destinationPath, $name);            
+            $product->image = $name;       
+        }
+        $product->save();
+
+        return redirect()->route('products.index')->with('message', 'Product updated successfully!');
     }   
 
-    public function desdroy($id)
+    public function destroy($id)
     {
         $product = Product::findOrFail($id);
         $product->delete();

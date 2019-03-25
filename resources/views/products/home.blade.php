@@ -38,16 +38,12 @@
                             <tr>
                                 <th scope="row">{{ $product->id }}</th>
                                 <td>{{ $product->name }}</td>
-                                <td>{{ $product->category->name }}</td>
+                                <td>{{ $product->category->name ?? '' }}</td>
                                 <td>{{ $product->price }}</td>
-                                <td>
-                                    <a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Edit</a>
-                                    <a
-                                        class="btn btn-danger"
-                                        href="javascript:(confirm('Are you sure you want delete this item?') ? window.location.href='{{ route('products.destroy', $product->id) }}' : false)"
-                                    >
-                                        Delete
-                                    </a>
+                                <td class="form-inline">
+                                    <a class="btn btn-primary mr-2" href="{{ route('products.edit', $product->id) }}">Edit</a>    
+                                    <a href="javascript(false);" class="btn btn-danger" data-toggle="modal" data-target="{{ '#modal-delete-' . $product->id }}">Delete</a>            
+                                    @include('layouts._includes._modal-delete', ['elementId' => $product->id, 'route'=> 'products.destroy'])                    
                                 </td>
                             </tr>
                         @endforeach

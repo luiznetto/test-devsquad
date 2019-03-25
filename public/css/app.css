@@ -10657,6 +10657,186 @@ a.text-dark:focus {
 
 .navbar-laravel {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 100;
+  color: #000;
+}
+
+.navbar-laravel img {
+  margin-bottom: 7px;
+}
+
+.pt-5 {
+  padding-top: none !important;
+}
+
+.navbar-nav {
+  margin-left: 30px;
+}
+
+.navbar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  text-transform: uppercase;
+}
+
+.header {
+  background-color: #7777;
+}
+
+.header img {
+  width: 100%;
+}
+
+.row-top {
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+}
+
+.first-row {
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  background-image: -webkit-linear-gradient(70deg, #fff 50%, #000 50%);
+  min-height: 500px;
+}
+
+.first-row h1 {
+  margin-top: 5%;
+  font-size: 60px;
+}
+
+.first-row p {
+  font-size: 25px;
+}
+
+.secount-row {
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.newsletter-row {
+  margin-top: 10%;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.row-products {
+  text-align: center;
+}
+
+.row-products button {
+  border: none;
+  outline: 0;
+  padding: 5px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 30%;
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 37px;
+}
+
+.row-products button:hover {
+  opacity: 0.7;
+}
+
+.row-informations {
+  font-size: 30px;
+}
+
+.row-informations .price {
+  float: right;
+}
+
+.newsletter-row {
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 100;
+}
+
+.newsletter-row h1 {
+  font-size: 60px;
+}
+
+.newsletter-row p {
+  font-size: 25px;
+}
+
+.newsletter-row button {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: none;
+  outline: 0;
+  padding: 5px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 10%;
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 37px;
+}
+
+.newsletter-row button:hover {
+  opacity: 0.7;
+}
+
+.newsletter-row input {
+  width: 25%;
+}
+
+.newsletter-row input::-webkit-input-placeholder {
+  color: #000;
+}
+
+.newsletter-row input:-ms-input-placeholder {
+  color: #000;
+}
+
+.newsletter-row input::-ms-input-placeholder {
+  color: #000;
+}
+
+.newsletter-row input::placeholder {
+  color: #000;
+}
+
+.newsletter-row .news {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #000;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.footer .text-footer {
+  text-transform: uppercase;
+}
+
+.footer .row-end-footer {
+  margin-top: 5%;
 }
 
