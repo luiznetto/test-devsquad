@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::resource('/products', 'ProductController')->middleware('auth');
+Route::resource('/products', 'ProductController' , ['except' => ['show']])->middleware('auth');
+Route::get('products/{product}', 'ProductController@show')->name('products.show');
 Route::resource('/categories', 'CategoryController')->middleware('auth')->except(['show']);
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/lists', 'PagesController@lists')->name('lists');
-Route::get('/lists/page_product/{id}', 'PagesController@page_product')->name('page_product');

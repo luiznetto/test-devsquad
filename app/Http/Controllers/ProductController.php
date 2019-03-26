@@ -80,4 +80,9 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('message' , 'Product has been deleted');
     }
+
+    public function show(Product $product)
+    {   
+        return view('page_product' ,['product' => $product]);
+    }
 }

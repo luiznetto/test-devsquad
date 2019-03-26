@@ -10660,7 +10660,8 @@ main {
 }
 
 .container-admin {
-  margin-bottom: 5%;
+  padding-bottom: 5%;
+  padding-top: 5%;
   background-color: #fff;
 }
 
@@ -10675,6 +10676,29 @@ main {
 
 .navbar-laravel img {
   margin-bottom: 7px;
+}
+
+.head input::-webkit-input-placeholder {
+  color: #696969;
+}
+
+.head input:-ms-input-placeholder {
+  color: #696969;
+}
+
+.head input::-ms-input-placeholder {
+  color: #696969;
+}
+
+.head input::placeholder {
+  color: #696969;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0069d9;
+  width: 30%;
 }
 
 .pt-5 {
@@ -10713,6 +10737,16 @@ main {
   margin-bottom: 0;
 }
 
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
 .first-row {
   color: #fff;
   width: 100%;
@@ -10746,6 +10780,7 @@ main {
 }
 
 .row-products {
+  width: 100%;
   text-align: center;
 }
 
@@ -10757,14 +10792,26 @@ main {
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 30%;
-  font-size: 12px;
+  width: 40%;
+  font-size: 20px;
   text-transform: uppercase;
-  height: 37px;
+  height: 50px;
+  margin-left: 25%;
 }
 
 .row-products button:hover {
   opacity: 0.7;
+}
+
+.row-products p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.row-products a {
+  text-decoration: none;
+  color: black;
 }
 
 .row-informations {

@@ -10,23 +10,20 @@
         <div class="row">
             <div class="col-6">
                 <div class="product-image">
-                    <img src="{{ asset('images/clock_1.png') }}" alt="" height="340" width="370">
+                    <img src="{{ URL::asset('/images/'.$product->image) }}" alt="" height="340" width="370">
                 </div>
             </div> 
             <div class="col-6">
                 <div class="product-data">
-                    <h3>Gold + Black</h3>
-                    <h2>$119,00</h2>
+                    <h3>{{$product->name}}</h3>
+                    <h2>{{'R$ '.number_format($product->price, 2, ',', '.')}}</h2>
                     <p>QUANTITY</p>
                     <div class="qty">
                         <span class="minus">-</span>
                         <input type="number" class="count" name="qty" value="01">
                         <span class="plus">+</span>
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                        A illo est assumenda autem fugit? 
-                        Odit, in vel itaque vero quidem ipsa non tenetur magni corrupti vitae ea maiores ad repudiandae?
-                    </p>
+                    <p>{{$product->description}}</p>
                 </div>
                     <p>
                         <button class="product">Add to Cart</button>
@@ -49,7 +46,7 @@
             </div>
         </div> 
     </div>
-        <footer class="footer"> 
+        <footer class="footer mt-auto py-3"> 
             <div class="container-fluid ">  
                 <div class="container"> 
                     <div class="row text-footer">

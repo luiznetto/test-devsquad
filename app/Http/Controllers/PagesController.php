@@ -20,9 +20,4 @@ class PagesController extends Controller
         $lists=Product::all();
         return view('lists' , ['lists' => $lists]);
     }
-
-    public function page_product(Product $product)
-    {   
-        return view('page_product' ,['product' => $product]);
-    }
 }

@@ -13,21 +13,23 @@
             </div>
         </div>
     </div> 
-    <div class="container container-products">   
-        <div class="row row-products">          
+    <div class="container container-products"> 
+        <div class="row row-products">           
                 @foreach($lists->slice(0, 9)  as $product)
-                <div class="small-3 medium-3 large-3 columns">         
-                    <img class="" id="preview"  src="{{isset($product) ? URL::asset('/images/'.$product->image) : '' }}"
-                         height="340" width="370">
-                         <div class="row row-informations">
-                            <p class="col-6">{{$product->name}}</p>
-                            <p class="col-6">{{'R$ '.number_format($product->price, 2, ',', '.')}}</p>                          
-                         </div>
-                            <p><button>Add to Cart</button></p> 
-                </div>
-                @endforeach             
-        </div>
-    </div>
+                    <a href="{{ route('products.show' , $product ) }}" class="product-text">
+                        <div class="small-3 medium-3 large-3 columns">         
+                            <img class="" id="preview"  src="{{isset($product) ? URL::asset('/images/'.$product->image) : '' }}"
+                                height="340" width="370">
+                                <div class="row row-informations">
+                                    <p class="col-6">{{$product->name}}</p>
+                                <p class="col-6">{{'R$ '.number_format($product->price, 2, ',', '.')}}</p>                          
+                            </div>
+                                <p><button>Add to Cart</button></p>                           
+                        </div>               
+                    </a> 
+                @endforeach                   
+        </div>        
+    </div>  
        
 @endsection
     
