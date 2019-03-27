@@ -28,7 +28,13 @@
                     <a href="{{ route('categories.index') }}" class="btn btn-danger mr-2">Cancel</a>
                 </div>           
             </form>
+            <footer class="footer-login">
+                <div class="container text-center">
+                    <span class="span-text">2019 Vintage - All rigths reserveds</span>
+                </div>
+            </footer>  
         </div>
-    </div>
+    </div>    
 </div>
+
 @endsection

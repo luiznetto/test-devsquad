@@ -76,12 +76,12 @@
             </div>
         </div> 
     </div>
-        <footer class="footer"> 
-            <div class="container-fluid">  
+    <footer class="footer mt-auto py-3"> 
+            <div class="container-fluid ">  
                 <div class="container"> 
                     <div class="row text-footer">
                         <div class="col-3">
-                            <img src="{{ asset('images/soon-footer.png') }}" /> 
+                            <img src="{{ asset('images/logo-footer1.png') }}" /> 
                         </div>
                         <div class=""></div>
                         <div class="col-3">
@@ -98,9 +98,21 @@
                         </div>
                         <div class="col-3">
                             <h4>social media</h4>
-                            <i class=" fa fa-facebook-official"></i>
-                            <i class=" fa fa-facebook-official"></i>
-                            <i class=" fa fa-facebook-official"></i>
+                            <div class="social-media">
+                                <span class="">
+                                    <i class="fab fa-facebook-square"></i>
+                                </span>                                
+                            </div>   
+                            <div class="social-media">
+                                <span class="">
+                                    <i class="fab fa-twitter"></i>
+                                </span>                                
+                            </div>   
+                            <div class="social-media">
+                                <span class="">
+                                    <i class="fab fa-youtube"></i>
+                                </span>                                
+                            </div>   
                         </div>
                     </div>
                     <div class="row row-end-footer">

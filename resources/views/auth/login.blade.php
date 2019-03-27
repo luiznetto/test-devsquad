@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="d-flex flex-column h-100">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center login">
         <div class="head">
-            <div class="">                
-                <img src="{{ asset('images/soon-login.png') }}"  />  
+            <div class="logo">                
+                <img src="{{ asset('images/logo-login.png') }}"  />  
             </div>                       
                 <div class="">
                     <form method="POST" action="{{ route('login') }}">
@@ -35,16 +35,16 @@
 
                         <div class="form-group">
                             <div class="text-center">                                 
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                <button type="submit" class="btn btn-primary-login">
+                                    {{ __('SignIn') }}
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div> 
-                <footer class="mt-auto py-3">
+                <footer class="footer-login">
                     <div class="container">
-                        <span class="text-muted">2019 Vintage - All rigths reserveds</span>
+                        <span class="span-text">2019 Vintage - All rigths reserveds</span>
                     </div>
                 </footer>           
         </div>

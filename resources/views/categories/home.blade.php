@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-.container-admin
 <div class="container container-admin">
     <div class="row">
         @include('layouts._includes._nav')
@@ -58,6 +57,11 @@
                     </div>
                 @endif
             </div>
+            <footer class="footer-login">
+                <div class="container text-center">
+                    <span class="span-text">2019 Vintage - All rigths reserveds</span>
+                </div>
+            </footer>  
         </div>
     </div>
 </div>

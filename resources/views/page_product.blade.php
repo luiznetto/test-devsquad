@@ -7,10 +7,10 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row row-page-product">
             <div class="col-6">
                 <div class="product-image">
-                    <img src="{{ URL::asset('/images/'.$product->image) }}" alt="" height="340" width="370">
+                    <img img-fluid src="{{ URL::asset('/images/'.$product->image) }}" alt="" height="340" width="370">
                 </div>
             </div> 
             <div class="col-6">
@@ -23,9 +23,9 @@
                         <input type="number" class="count" name="qty" value="01">
                         <span class="plus">+</span>
                     </div>
-                    <p>{{$product->description}}</p>
+                    <p class="text-product">{{$product->description}}</p>
                 </div>
-                    <p>
+                    <p class="text-center">
                         <button class="product">Add to Cart</button>
                     </p>                
             </div>
@@ -51,7 +51,7 @@
                 <div class="container"> 
                     <div class="row text-footer">
                         <div class="col-3">
-                            <img src="{{ asset('images/soon-footer.png') }}" /> 
+                            <img src="{{ asset('images/logo-footer1.png') }}" /> 
                         </div>
                         <div class=""></div>
                         <div class="col-3">
@@ -68,9 +68,21 @@
                         </div>
                         <div class="col-3">
                             <h4>social media</h4>
-                            <i class=" fa fa-facebook-official"></i>
-                            <i class=" fa fa-facebook-official"></i>
-                            <i class=" fa fa-facebook-official"></i>
+                            <div class="social-media">
+                                <span class="">
+                                    <i class="fab fa-facebook-square"></i>
+                                </span>                                
+                            </div>   
+                            <div class="social-media">
+                                <span class="">
+                                    <i class="fab fa-twitter"></i>
+                                </span>                                
+                            </div>   
+                            <div class="social-media">
+                                <span class="">
+                                    <i class="fab fa-youtube"></i>
+                                </span>                                
+                            </div>   
                         </div>
                     </div>
                     <div class="row row-end-footer">

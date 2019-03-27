@@ -10655,6 +10655,10 @@ a.text-dark:focus {
   }
 }
 
+html {
+  background-color: #fff;
+}
+
 main {
   background-color: #fff;
 }
@@ -10662,20 +10666,23 @@ main {
 .container-admin {
   padding-bottom: 5%;
   padding-top: 5%;
-  background-color: #fff;
 }
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 100;
+  font-size: 13px;
+  font-weight: 900;
   color: #000;
 }
 
 .navbar-laravel img {
   margin-bottom: 7px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000;
 }
 
 .head input::-webkit-input-placeholder {
@@ -10694,7 +10701,11 @@ main {
   color: #696969;
 }
 
-.btn-primary {
+.head .form-group {
+  margin-bottom: 2rem;
+}
+
+.btn-primary-login {
   color: #fff;
   background-color: #0069d9;
   border-color: #0069d9;
@@ -10715,6 +10726,10 @@ main {
   top: 0;
   z-index: 999;
   text-transform: uppercase;
+}
+
+.nav-product a {
+  color: #000;
 }
 
 .header {
@@ -10793,7 +10808,7 @@ main {
   text-align: center;
   cursor: pointer;
   width: 40%;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
   height: 50px;
   margin-left: 25%;
@@ -10849,9 +10864,9 @@ main {
   text-align: center;
   cursor: pointer;
   width: 10%;
-  font-size: 12px;
+  font-size: 18px;
   text-transform: uppercase;
-  height: 37px;
+  height: 50px;
 }
 
 .newsletter-row button:hover {
@@ -10897,6 +10912,10 @@ main {
 
 .footer .text-footer {
   text-transform: uppercase;
+}
+
+.footer h4 {
+  margin-bottom: 15%;
 }
 
 .footer .row-end-footer {
@@ -11022,11 +11041,59 @@ input:disabled {
   text-align: center;
   cursor: pointer;
   width: 30%;
-  font-size: 15px;
-  height: 40px;
+  font-size: 18px;
+  height: 50px;
 }
 
 button:hover {
   opacity: 0.7;
+}
+
+.footer-login {
+  position: fixed;
+  bottom: 7%;
+  text-align: center;
+}
+
+.footer-login .span-text {
+  font-weight: 900;
+  font-size: 20px;
+  color: #000;
+}
+
+.login {
+  margin-top: 5%;
+}
+
+.logo {
+  margin-bottom: 20%;
+}
+
+.text-product {
+  font-weight: 500;
+  font-size: 19px;
+  color: #5b5b5b;
+}
+
+.row-page-product {
+  padding-top: 5%;
+}
+
+.social-media {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #f0f0f0;
+  color: #000;
+  width: 50px;
+  height: 50px;
+  font: 25px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+
+.fab {
+  margin-top: 25%;
 }
 
