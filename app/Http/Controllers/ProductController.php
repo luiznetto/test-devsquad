@@ -6,6 +6,9 @@ use App\Product;
 use App\Category;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
+use League\Csv\Reader;
+use League\Csv\Writer;
+
 
 class ProductController extends Controller
 {
@@ -84,5 +87,22 @@ class ProductController extends Controller
     public function show(Product $product)
     {   
         return view('page_product' ,['product' => $product]);
+    }
+
+    public function upload()
+    {
+       return view('products.import');
+    }
+
+    public function uploadPost(Request $request)
+    {
+       //dd($request->csv);
+        $file=$request->csv->store('csv');
+        return ('Valeu Genivaldo');
+    }
+
+    public function readCsv()
+    {
+        Reader::createFromPath('../storage/app/csv');
     }
 }

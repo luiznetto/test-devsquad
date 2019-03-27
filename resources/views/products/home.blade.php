@@ -15,7 +15,32 @@
             <div class="row flex-row justify-content-between">
                 <div class="flex-row">
                     <a class="btn btn-primary mr-2" href="{{route('products.create')}}">ADD PRODUCT</a>
-                    <a class="btn btn-primary mr-2" href="{{route('products.create')}}">IMPORT PRODUCT</a>
+                    <a class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal">IMPORT PRODUCT</a>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">UPLOAD PRODUCT</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>                        
+                        <div class="modal-footer">                            
+                            <form action="{{ route('products.import') }}" method="post" enctype="multipart/form-data"> 
+                                {{ csrf_field() }}
+                                <!-- Modal body -->
+                                <div class="modal-body">                                                    
+                                    <div class="form-group" >                                        
+                                        <input class="file btn btn-lg btn-primary form-control" id="csv" type="file" name="csv">              
+                                    </div>
+                                </div>  
+                                <!-- Modal footer -->
+                                <button type="submit" class="btn btn-primary">Upload</button>     
+                                <a href="javascript(false);" class="btn btn-danger" data-dismiss="modal">Close</a>
+                            </form>                                                  
+                        </div>
+                    </div>
+                </div>
                 </div>
                 <form class="form-inline">
                     <input type="text" class="form-control" placeholder="Search">
