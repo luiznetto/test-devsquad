@@ -19,7 +19,6 @@ Auth::routes();
 Route::resource('/products', 'ProductController' , ['except' => ['show']])->middleware('auth');
 Route::get('products/{product}', 'ProductController@show')->name('products.show');
 
-Route::get('upload' , 'ProductController@upload');
 Route::post('upload', 'ProductController@uploadPost')->name('products.import');
 Route::get('read_csv', 'ProductController@readCsv');
 

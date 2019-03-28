@@ -89,20 +89,23 @@ class ProductController extends Controller
         return view('page_product' ,['product' => $product]);
     }
 
-    public function upload()
-    {
-       return view('products.import');
-    }
 
     public function uploadPost(Request $request)
     {
        //dd($request->csv);
-        $file=$request->csv->store('csv');
-        return ('Valeu Genivaldo');
+        $file = $request->csv->store('csv');
+        //return redirect()->route('products.index')->with('message', 'Upload successfully!');
+       // return $this->readCsv($file);
+        return $file;
     }
 
     public function readCsv()
     {
-        Reader::createFromPath('../storage/app/csv');
+        //$test = Reader::createFromPath('../storage/app/public/csv/text.csv');
+        //$header = $file;
+        //return $file;
+        $file = Reader::createFromPath('../storage/app/public/csv/text.csv');
+        $file = $file->toHTML();
+       
     }
 }
